@@ -1,16 +1,17 @@
-function fibsRec(num) {
-  const arr = [0, 1];
+function fibsRec(length) {
+  if (length < 1) return 'enter a valid input';
 
-  if (num === 1) {
-    return (0);
+  // base case
+  if (length === 1) {
+    return [0];
   }
-  if (num === 2) {
-    return (1);
-  } if (num > 2) {
-    const res = fibsRec(num - 1) + fibsRec(num - 2);
-    arr.push(res);
-    return res;
+  if (length === 2) {
+    return [0, 1];
   }
+
+  // recursive case
+  return [...fibsRec(length - 1),
+    fibsRec(length - 1)[length - 2] + fibsRec(length - 1)[length - 3]];
 }
 
-console.log(fibsRec(11));
+console.log(fibsRec(10));
