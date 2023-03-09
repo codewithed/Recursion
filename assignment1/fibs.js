@@ -5,7 +5,9 @@ function fibs(num) {
     return [];
   }
 
-  if (num === 1) { return arr[0]; }
+  if (num === 1) {
+    return arr[0];
+  }
 
   for (let i = 2; i < num; i += 1) {
     arr[i] = arr[i - 1] + arr[i - 2];
